@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace KspFR_HangarMod.Utils
+namespace KerbalSpaceHangars.Utils
 {
     public static class KshUtils {
         public static Texture2D GetTextureFromWww(string url) {

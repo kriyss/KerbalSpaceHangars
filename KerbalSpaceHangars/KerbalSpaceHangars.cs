@@ -1,10 +1,7 @@
-﻿using UnityEngine;
-using KspFR_HangarMod.UI;
-using KspFR_HangarMod.Service;
-using System.Collections.Generic;
+﻿using KerbalSpaceHangars.UI;
+using UnityEngine;
 
-
-namespace KspFR_HangarMod
+namespace KerbalSpaceHangars
 {
     [KSPAddon(KSPAddon.Startup.EditorAny, false)]
     public partial class KerbalSpaceHangars : MonoBehaviour

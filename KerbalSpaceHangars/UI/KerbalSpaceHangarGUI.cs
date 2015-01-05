@@ -1,12 +1,9 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using KerbalSpaceHangars.Extensions;
+using KerbalSpaceHangars.Utils;
 using UnityEngine;
-using System.Collections;
-using KspFR_HangarMod.Utils;
-using KspFR_HangarMod.Extensions;
-using System.Collections.Generic;
-using KspFR_HangarMod.Extensions;
 
-namespace KspFR_HangarMod.UI
+namespace KerbalSpaceHangars.UI
 {
     class KerbalSpaceHangarGui {
         private const float MaxWidth        = 1200;

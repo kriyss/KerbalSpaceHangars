@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace KspFR_HangarMod.Service
+namespace KerbalSpaceHangars.Service
 {
     public class KspFrCraftInformation : ICraftInformation
     {

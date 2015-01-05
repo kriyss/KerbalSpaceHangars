@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using KspFR_HangarMod.Extensions;
+using KerbalSpaceHangars.Extensions;
 
-namespace KspFR_HangarMod
+namespace KerbalSpaceHangars
 {
     public class Craft
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace KspFR_HangarMod.Extensions
+namespace KerbalSpaceHangars.Extensions
 {
     public static class RichTextExtension {
 

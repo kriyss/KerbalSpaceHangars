@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace KspFR_HangarMod
+namespace KerbalSpaceHangars
 {
     public enum SkinList
     {
