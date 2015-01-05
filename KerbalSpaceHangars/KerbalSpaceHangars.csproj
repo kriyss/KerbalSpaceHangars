@@ -72,7 +72,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>@echo off
-xcopy "C:\ksp_dev\KspFR-HangarMod\Output" "C:\ksp_dev\Kerbal Space Program" /D /E /C /R /I /K /Y
+xcopy "C:\ksp_dev\KerbalSpaceHangars\Output" "C:\ksp_dev\Kerbal Space Program" /D /E /C /R /I /K /Y
 call "C:\ksp_dev\Kerbal Space Program\KSP.exe"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
