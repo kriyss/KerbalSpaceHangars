@@ -7,8 +7,8 @@
     <ProjectGuid>{1B9F2D72-4FF8-4689-9A8E-D87328282C19}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KspFR_HangarMod</RootNamespace>
-    <AssemblyName>KspFR-HangarMod</AssemblyName>
+    <RootNamespace>KerbalSpaceHangars</RootNamespace>
+    <AssemblyName>KerbalSpaceHangars</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -56,12 +56,9 @@
     <Compile Include="Service\KspFrCraftInformation.cs" />
     <Compile Include="Const.cs" />
     <Compile Include="UI\KerbalSpaceHangarGUI.cs" />
-    <Compile Include="UI\SildeShow.cs" />
     <Compile Include="Utils\KshUtils.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Service\NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

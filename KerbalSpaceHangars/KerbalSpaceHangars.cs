@@ -42,7 +42,7 @@ namespace KspFR_HangarMod
                 () => ScreenMessages.PostScreenMessage("Ouvrir le hangar", 1, 0),
                 null, null, null,
                 AppScenes,
-                GameDatabase.Instance.GetTexture("kriyss/HangarMod/Assets/home_w", false));
+                GameDatabase.Instance.GetTexture("kriyss/KerbalSpaceHangars/Assets/home_w", false));
             ApplicationLauncher.Instance.EnableMutuallyExclusive(_hangarButton);
         }
 

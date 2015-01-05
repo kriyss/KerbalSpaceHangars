@@ -18,24 +18,23 @@ namespace KspFR_HangarMod.UI
         private readonly float _firstRectWidth  = MaxWidth / 3 - GetOffSet(0, 1);
         private readonly float _secondRectWidth = MaxWidth / 3 * 2 - GetOffSet(0, 2);
 
-        private readonly Texture2D _fuseeIcon       = GameDatabase.Instance.GetTexture("kriyss/HangarMod/Assets/fusee_w",     false);
-        private readonly Texture2D _navetteIcon     = GameDatabase.Instance.GetTexture("kriyss/HangarMod/Assets/navette_w",   false);
-        private readonly Texture2D _stationIcon     = GameDatabase.Instance.GetTexture("kriyss/HangarMod/Assets/station_w",   false);
-        private readonly Texture2D _avionIcon       = GameDatabase.Instance.GetTexture("kriyss/HangarMod/Assets/avion_w",     false);
-        private readonly Texture2D _baseIcon        = GameDatabase.Instance.GetTexture("kriyss/HangarMod/Assets/base_w",      false);
-        private readonly Texture2D _homeIcon        = GameDatabase.Instance.GetTexture("kriyss/HangarMod/Assets/home_w",      false);
-        private readonly Texture2D _landerIcon      = GameDatabase.Instance.GetTexture("kriyss/HangarMod/Assets/lander_w",    false);
-        private readonly Texture2D _roverIcon       = GameDatabase.Instance.GetTexture("kriyss/HangarMod/Assets/rover_w",     false);
-        private readonly Texture2D _subassIcon      = GameDatabase.Instance.GetTexture("kriyss/HangarMod/Assets/subass_w",    false);
-        private readonly Texture2D _sondeIcon       = GameDatabase.Instance.GetTexture("kriyss/HangarMod/Assets/sonde_w",     false);
+        private readonly Texture2D _fuseeIcon   = GameDatabase.Instance.GetTexture("kriyss/KerbalSpaceHangars/Assets/fusee_w", false);
+        private readonly Texture2D _navetteIcon = GameDatabase.Instance.GetTexture("kriyss/KerbalSpaceHangars/Assets/navette_w", false);
+        private readonly Texture2D _stationIcon = GameDatabase.Instance.GetTexture("kriyss/KerbalSpaceHangars/Assets/station_w", false);
+        private readonly Texture2D _avionIcon   = GameDatabase.Instance.GetTexture("kriyss/KerbalSpaceHangars/Assets/avion_w", false);
+        private readonly Texture2D _baseIcon    = GameDatabase.Instance.GetTexture("kriyss/KerbalSpaceHangars/Assets/base_w", false);
+        private readonly Texture2D _homeIcon    = GameDatabase.Instance.GetTexture("kriyss/KerbalSpaceHangars/Assets/home_w", false);
+        private readonly Texture2D _landerIcon  = GameDatabase.Instance.GetTexture("kriyss/KerbalSpaceHangars/Assets/lander_w", false);
+        private readonly Texture2D _roverIcon   = GameDatabase.Instance.GetTexture("kriyss/KerbalSpaceHangars/Assets/rover_w", false);
+        private readonly Texture2D _subassIcon  = GameDatabase.Instance.GetTexture("kriyss/KerbalSpaceHangars/Assets/subass_w", false);
+        private readonly Texture2D _sondeIcon   = GameDatabase.Instance.GetTexture("kriyss/KerbalSpaceHangars/Assets/sonde_w", false);
         //private readonly Texture2D _btnDownload     = GameDatabase.Instance.GetTexture("kriyss/HangarMod/Assets/download_b",  false);
 
         private readonly Texture2D _firstImg;
         private readonly Texture2D _secImg;
         private readonly Texture2D _treImg;
 
-        private const String Yellow = "#ffc600";
-        private const String Green  = "#a7f20d";
+        private readonly List<Craft> _tmpCrafts = new List<Craft>(); 
 
         private List<Texture> _imageArray = new List<Texture>();
         private int _currentImage = 0;
@@ -52,7 +51,12 @@ namespace KspFR_HangarMod.UI
             _imageArray.Add(_firstImg);
             _imageArray.Add(_secImg);
             _imageArray.Add(_treImg);
+
+            _tmpCrafts.Add(new Craft() { Author = "Dakitess",       Description = "toto", DonwloadId = 1, Name = "DC - Mendacium (Launcher)",   NbDonwload = 17, Rate = 4.5f });
+            _tmpCrafts.Add(new Craft() { Author = "Dragoon1010",    Description = "toto", DonwloadId = 2, Name = "Kig-29",                      NbDonwload = 12, Rate = 5.0f });
+            _tmpCrafts.Add(new Craft() { Author = "Nemecle",        Description = "toto", DonwloadId = 3, Name = "The Implaler",                NbDonwload = 5, Rate = 3.5f });
         } 
+
 
         public void Draw() {
             GUI.skin = HighLogic.Skin;
@@ -76,18 +80,9 @@ namespace KspFR_HangarMod.UI
 
             _scrollPosition = GUILayout.BeginScrollView(_scrollPosition, false, true, GUILayout.Width(_firstRectWidth));
 
-            GUILayout.Button(new GUIContent(GetPrez("DC - Mendacium (Launcher)", "Dakitess", "5,0", "17"), _firstImg), GUILayout.Height(ButtonHeight), GUILayout.Width(_firstRectWidth - 28));
-            GUILayout.Button(new GUIContent(GetPrez("Kig-29", "Dragoon1010", "3,0", "9"), _treImg), GUILayout.Height(ButtonHeight), GUILayout.Width(_firstRectWidth - 28));
-            GUILayout.Button(new GUIContent(GetPrez("Kig-29 SSTO", "Dragoon1010", "N/A", "17"), _secImg), GUILayout.Height(ButtonHeight), GUILayout.Width(_firstRectWidth - 28));
-            GUILayout.Button(new GUIContent(GetPrez("Kig-29 SSTO", "Dragoon1010", "N/A", "17"), _secImg), GUILayout.Height(ButtonHeight), GUILayout.Width(_firstRectWidth - 28));
-            GUILayout.Button(new GUIContent(GetPrez("Kig-29 SSTO", "Dragoon1010", "N/A", "17"), _secImg), GUILayout.Height(ButtonHeight), GUILayout.Width(_firstRectWidth - 28));
-            GUILayout.Button(new GUIContent(GetPrez("Kig-29 SSTO", "Dragoon1010", "N/A", "17"), _secImg), GUILayout.Height(ButtonHeight), GUILayout.Width(_firstRectWidth - 28));
-            GUILayout.Button(new GUIContent(GetPrez("Kig-29 SSTO", "Dragoon1010", "N/A", "17"), _secImg), GUILayout.Height(ButtonHeight), GUILayout.Width(_firstRectWidth - 28));
-            GUILayout.Button(new GUIContent(GetPrez("Kig-29 SSTO", "Dragoon1010", "N/A", "17"), _secImg), GUILayout.Height(ButtonHeight), GUILayout.Width(_firstRectWidth - 28));
-            GUILayout.Button(new GUIContent(GetPrez("Kig-29 SSTO", "Dragoon1010", "N/A", "17"), _secImg), GUILayout.Height(ButtonHeight), GUILayout.Width(_firstRectWidth - 28));
-            GUILayout.Button(new GUIContent(GetPrez("Kig-29 SSTO", "Dragoon1010", "N/A", "17"), _secImg), GUILayout.Height(ButtonHeight), GUILayout.Width(_firstRectWidth - 28));
-            GUILayout.Button(new GUIContent(GetPrez("Kig-29 SSTO", "Dragoon1010", "N/A", "17"), _secImg), GUILayout.Height(ButtonHeight), GUILayout.Width(_firstRectWidth - 28));
-            GUILayout.Button(new GUIContent(GetPrez("Kig-29 SSTO", "Dragoon1010", "N/A", "17"), _secImg), GUILayout.Height(ButtonHeight), GUILayout.Width(_firstRectWidth - 28));
+            _tmpCrafts.ForEach(craft => 
+                GUILayout.Button(new GUIContent(craft.GetDescriptionForBtn(), _treImg), GUILayout.Height(ButtonHeight), GUILayout.Width(_firstRectWidth - 28))
+            );
 
             GUILayout.EndScrollView();
              
@@ -116,26 +111,26 @@ namespace KspFR_HangarMod.UI
             var width = _secondRectWidth - 35;
 
             GUILayout.BeginVertical(GUILayout.Width(width));
-            GUILayout.Label("DC - Mendacium (Launcher)".Color(Yellow).Size(25).Bold(), persBoxTitle);
+            //GUILayout.Label("DC - Mendacium (Launcher)".Color(Yellow).Size(25).Bold(), persBoxTitle);
 
                 DrawSlideShow();
                 GUILayout.Space(3);
                 GUILayout.BeginHorizontal(GUIStyle.none);
                 GUILayout.BeginVertical(HighLogic.Skin.box, GUILayout.Width(width / 2), GUILayout.Height(250));
                     GUILayout.Space(2);
-                    GUILayout.Label("Auteur :".Color(Green).Size(17).Bold() + " Dakitess".Color("silver").Size(17).Bold());
-                    GUILayout.Label("<b><size=17><color="+Green+">Téléchargement : </color><color=silver>19</color></size></b>");
-                    GUILayout.Label("<b><size=17><color=" + Green + ">Note : </color><color=silver>4,5</color></size></b>");
-                    GUILayout.Label("<b><size=17><color=" + Green + ">Equipage : </color><color=silver>2</color></size></b>");
-                    GUILayout.Label("<b><size=17><color=" + Green + ">Nombre de parts : </color><color=silver>84</color></size></b>");
-                    GUILayout.Label("<b><size=17><color=" + Green + ">Equipage : </color><color=silver>2</color></size></b>");
-                    GUILayout.Label("<b><size=17><color=" + Green + ">Mods : </color><color=silver>Kethane, KW Rocketry</color></size></b>");
+                   //GUILayout.Label("Auteur :".Color(Green).Size(17).Bold() + " Dakitess".Color("silver").Size(17).Bold());
+                   //GUILayout.Label("<b><size=17><color="+Green+">Téléchargement : </color><color=silver>19</color></size></b>");
+                   //GUILayout.Label("<b><size=17><color=" + Green + ">Note : </color><color=silver>4,5</color></size></b>");
+                   //GUILayout.Label("<b><size=17><color=" + Green + ">Equipage : </color><color=silver>2</color></size></b>");
+                   //GUILayout.Label("<b><size=17><color=" + Green + ">Nombre de parts : </color><color=silver>84</color></size></b>");
+                   //GUILayout.Label("<b><size=17><color=" + Green + ">Equipage : </color><color=silver>2</color></size></b>");
+                   //GUILayout.Label("<b><size=17><color=" + Green + ">Mods : </color><color=silver>Kethane, KW Rocketry</color></size></b>");
 
                 GUILayout.EndVertical();
                 GUILayout.Space(2);
 
                 GUILayout.BeginVertical(HighLogic.Skin.box, GUILayout.Height(250));
-                GUILayout.Label("<b><size=17><color=" + Green + ">Description : \n</color><color=silver>Un lanceur aussi esthétique qu'efficace, peut être le meilleur représentant du savoir faire de la Dakitess Corporation</color></size></b>");
+               // GUILayout.Label("<b><size=17><color=" + Green + ">Description : \n</color><color=silver>Un lanceur aussi esthétique qu'efficace, peut être le meilleur représentant du savoir faire de la Dakitess Corporation</color></size></b>");
 
                 GUILayout.EndVertical();
             GUILayout.EndHorizontal();
@@ -167,14 +162,6 @@ namespace KspFR_HangarMod.UI
                     _currentImage = 0;
             }
             GUILayout.EndHorizontal();
-        }
-
-        private static string GetPrez(string name, string auteur, string rated, string nbDownload) {
-            name        = "\n"+name.Color(Yellow).ReturnLine();
-            auteur = (" Auteur : ".Color(Green) + auteur).ReturnLine();
-            rated = (" Note : ".Color(Green) + rated).ReturnLine();
-            nbDownload = (" Téléchargements : ".Color(Green) + nbDownload).ReturnLine();
-            return (name + auteur + rated + nbDownload).Size(13);
         }
 
         private static float GetOffSet(float nbOffSetInside, float nbOffsetOutside) {
